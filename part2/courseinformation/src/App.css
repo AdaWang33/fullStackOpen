@@ -1,24 +1,6 @@
 .App {
-  text-align: left;
-  margin-left: 10px;
+  text-align: center;
 }
-
-header {
-  font-size: xx-large;
-  font-weight: bold;
-  text-align:left;
-  margin-top: 30px;
-}
-
-.buttons {
-  size:lg;
-  margin-top: 30px;
-}
-
-Button {
-  margin-right: 10px;
-}
-
 
 .App-logo {
   height: 40vmin;

@@ -79,13 +79,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>give feedback</header>
+      <h1>give feedback</h1>
       <div className="buttons">
         <Button clickEvent={handleGood} text='good'></Button>
         <Button clickEvent={handleNeutral} text='neutral'></Button>
         <Button clickEvent={handleBad} text='bad'></Button>
       </div>
-      <p id="statistics"> statistics </p>
+      <h1 id="statistics"> statistics </h1>
       <Statistics count={count}></Statistics>
     </div>
   );
