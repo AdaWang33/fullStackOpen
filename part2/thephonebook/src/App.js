@@ -1,21 +1,27 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import Filter from './components/Filter/Filter'
 import PersonForm from './components/PersonForm/PersonForm'
 import Persons from './components/Persons/Persons'
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { 
-      name: 'Arto Hellas',
-      number: '040-1234567'
-    }
-  ])
+  const [persons, setPersons] = useState([])
 
   // Maintain the application's state and all event handlers in the App root component
   const [newName, setNewName] = useState('')
   const [newNum, setNewNum] = useState('')
   const [keyword, setKeyWord] = useState('')
   const filteredPersons = persons.filter(person => person.name.toLowerCase().indexOf(keyword.toLowerCase())!==-1)
+
+  useEffect(() => {
+    console.log('effect')
+    axios
+      .get('http://localhost:3001/persons')
+      .then(response => {
+        console.log('promise fulfilled')
+        setPersons(response.data)
+      })
+  }, [])
 
   const handleOnNameChange = (event) => {
     setNewName(event.target.value)
