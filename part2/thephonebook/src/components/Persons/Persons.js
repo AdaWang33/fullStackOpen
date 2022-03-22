@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Persons = ({filteredPersons}) => (
-  <div>
-    {filteredPersons.map(person => (<p key={person.name}>{person.name} {person.number}</p>))}
-  </div>
+const Persons = ({filteredPersons, handleDelete}) => (
+  <>
+    {filteredPersons.map(person => (<div key={person.id}>{person.name} {person.number}  <button onClick={()=>handleDelete(person.id)}>Delete</button></div> ))}
+  </>
 );
 
 Persons.propTypes = {};
